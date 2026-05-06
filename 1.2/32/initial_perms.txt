@@ -1,0 +1,5 @@
+drwxrwxr-x hr
+-rw-rw-r-- employees.txt
+drwxrwxr-x project_alpha
+-rw-rw-r-- deploy.sh
+drwxrwxr-x servers
