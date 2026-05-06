@@ -1,0 +1,78 @@
+Команда: uname -a
+Linux rocky-lab.local 5.14.0-611.5.1.el9_7.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Nov 11 22:20:27 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+Команда: cat /etc/os-release
+NAME="Rocky Linux"
+VERSION="9.7 (Blue Onyx)"
+ID="rocky"
+ID_LIKE="rhel centos fedora"
+VERSION_ID="9.7"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="Rocky Linux 9.7 (Blue Onyx)"
+ANSI_COLOR="0;32"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:rocky:rocky:9::baseos"
+HOME_URL="https://rockylinux.org/"
+VENDOR_NAME="RESF"
+VENDOR_URL="https://resf.org/"
+BUG_REPORT_URL="https://bugs.rockylinux.org/"
+SUPPORT_END="2032-05-31"
+ROCKY_SUPPORT_PRODUCT="Rocky-Linux-9"
+ROCKY_SUPPORT_PRODUCT_VERSION="9.7"
+REDHAT_SUPPORT_PRODUCT="Rocky Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="9.7"
+
+Команда: whoami
+student
+
+Команда: ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:b3:ab:87 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 81244sec preferred_lft 81244sec
+    inet6 fd17:625c:f037:2:a00:27ff:feb3:ab87/64 scope global dynamic noprefixroute 
+       valid_lft 86161sec preferred_lft 14161sec
+    inet6 fe80::a00:27ff:feb3:ab87/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:2d:25:c7 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.101/24 brd 192.168.56.255 scope global dynamic noprefixroute enp0s8
+       valid_lft 544sec preferred_lft 544sec
+    inet6 fe80::a00:27ff:fe2d:25c7/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+Команда: df -h
+Filesystem                       Size  Used Avail Use% Mounted on
+devtmpfs                         4.0M     0  4.0M   0% /dev
+tmpfs                            383M     0  383M   0% /dev/shm
+tmpfs                            153M  6.2M  147M   4% /run
+/dev/mapper/rlm_rocky--lab-root   17G  2.4G   15G  15% /
+/dev/sda1                        960M  316M  645M  33% /boot
+tmpfs                             77M     0   77M   0% /run/user/1000
+
+Команда: free -h
+               total        used        free      shared  buff/cache   available
+Mem:           764Mi       282Mi       239Mi       0.0Ki       371Mi       482Mi
+Swap:          2.0Gi        66Mi       1.9Gi
+
+Команда: lsblk
+NAME                    MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+sda                       8:0    0  20G  0 disk 
+├─sda1                    8:1    0   1G  0 part /boot
+└─sda2                    8:2    0  19G  0 part 
+  ├─rlm_rocky--lab-root 253:0    0  17G  0 lvm  /
+  └─rlm_rocky--lab-swap 253:1    0   2G  0 lvm  [SWAP]
+
+Команда: date
+Sun Apr 12 06:50:16 AM MSK 2026
+
+Команда: systemctl --version
+systemd 252 (252-55.el9_7.8.rocky.0.1)
++PAM +AUDIT +SELINUX -APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified
+
